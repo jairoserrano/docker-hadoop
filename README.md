@@ -24,6 +24,7 @@ Run example wordcount job:
 
 Or deploy in swarm:
 ```
+docker network create --driver overlay hbase
 docker stack deploy -c docker-compose-v3.yml hadoop
 ```
 
@@ -31,11 +32,11 @@ docker stack deploy -c docker-compose-v3.yml hadoop
 
 Run `docker network inspect` on the network (e.g. `docker-hadoop_default`) to find the IP the Hadoop interfaces are published on. Access these interfaces with the following URLs:
 
-* Namenode: http://<dockerhadoop_IP_address>:9870/dfshealth.html#tab-overview
-* History server: http://<dockerhadoop_IP_address>:8188/applicationhistory
-* Resource manager: http://<dockerhadoop_IP_address>:8088/
+* Namenode: http://localhost:9870/dfshealth.html#tab-overview
+* History server: http://localhost:8188/applicationhistory
+* Resource manager: http://localhost:8088/
 
-All other Hadoop communication ports are not exposed and only accessible from inside the Docker network using service name and port, eg. `http://namenode:9000/`.
+All other Hadoop communication ports are not exposed and only accessible from inside the Docker network using service name and port.
 
 ## Configure Environment Variables
 
