@@ -1,8 +1,6 @@
 ARG HADOOP_BASE_VERSION=2.0.0-hadoop3.2.2-java11
 FROM bde2020/hadoop-base:$HADOOP_BASE_VERSION
 
-MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
-
 COPY WordCount.jar /opt/hadoop/applications/WordCount.jar
 
 ENV JAR_FILEPATH="/opt/hadoop/applications/WordCount.jar"

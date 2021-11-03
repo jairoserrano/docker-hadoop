@@ -34,6 +34,7 @@ RUN ln -s /opt/hadoop-$HADOOP_VERSION /opt/hadoop
 RUN mkdir /opt/hadoop-$HADOOP_VERSION/logs
 
 RUN mkdir /hadoop-data
+RUN mkdir /project
 
 ENV HADOOP_HOME=/opt/hadoop-$HADOOP_VERSION
 ENV HADOOP_CONF_DIR=/etc/hadoop

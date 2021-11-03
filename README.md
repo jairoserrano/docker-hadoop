@@ -17,6 +17,15 @@ To deploy an example HDFS cluster, run:
   make
   docker-compose up
 ```
+To run hdfs command, run:
+```
+  docker run --network docker-hadoop_default --env-file hadoop.env bde2020/hadoop-base:master hdfs dfs -ls /
+```
+
+To run hadoop command inside container, run:
+```
+  docker run -it --network docker-hadoop_default -v `pwd`:/data --env-file hadoop.env bde2020/hadoop-base:master bash
+```
 
 Run example wordcount job:
 ```
@@ -64,3 +73,5 @@ The available configurations are:
 * /etc/hadoop/mapred-site.xml  MAPRED_CONF
 
 If you need to extend some other configuration file, refer to base/entrypoint.sh bash script.
+
+Thanks to original maintainer "Ivan Ermilov <mailto:ivan.s.ermilov@gmail.com>"
