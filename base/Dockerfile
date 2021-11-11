@@ -6,6 +6,7 @@ MAINTAINER Giannis Mouchakis <gmouchakis@iit.demokritos.gr>
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
       openjdk-11-jdk \
       net-tools \
+      python3 \
       curl \
       netcat \
       gnupg \
@@ -41,6 +42,7 @@ ENV HADOOP_HOME=/opt/hadoop-$HADOOP_VERSION
 ENV HADOOP_CONF_DIR=/etc/hadoop
 ENV MULTIHOMED_NETWORK=1
 ENV USER=root
+ENV STREAMING=/opt/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.2.2.jar
 ENV PATH $HADOOP_HOME/bin/:$PATH
 
 ADD entrypoint.sh /entrypoint.sh
