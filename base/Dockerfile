@@ -19,7 +19,7 @@ RUN curl -O https://dist.apache.org/repos/dist/release/hadoop/common/KEYS
 
 RUN gpg --import KEYS
 
-ENV HADOOP_VERSION 3.2.2
+ENV HADOOP_VERSION 3.2.3
 ENV HADOOP_URL https://www.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz
 
 RUN set -x \
@@ -42,7 +42,7 @@ ENV HADOOP_HOME=/opt/hadoop-$HADOOP_VERSION
 ENV HADOOP_CONF_DIR=/etc/hadoop
 ENV MULTIHOMED_NETWORK=1
 ENV USER=root
-ENV STREAMING=/opt/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.2.2.jar
+ENV STREAMING=/opt/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.2.3.jar
 ENV PATH $HADOOP_HOME/bin/:$PATH
 
 ADD entrypoint.sh /entrypoint.sh

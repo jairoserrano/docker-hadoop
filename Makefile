@@ -10,9 +10,14 @@ build:
 	docker build -t bde2020/hadoop-nodemanager:$(current_branch) $(base_version) ./nodemanager
 	docker build -t bde2020/hadoop-historyserver:$(current_branch) $(base_version) ./historyserver
 	docker build -t bde2020/hadoop-submit:$(current_branch) $(base_version) ./submit
-	docker volume rm docker-hadoop_hadoop_datanode
-	docker volume rm docker-hadoop_hadoop_historyserver
-	docker volume rm docker-hadoop_hadoop_namenode
+	#docker volume rm docker-hadoop_hadoop_datanode
+	#docker volume rm docker-hadoop_hadoop_historyserver
+	#docker volume rm docker-hadoop_hadoop_namenode
+
+clean:
+	#docker volume rm docker-hadoop_hadoop_datanode
+	#docker volume rm docker-hadoop_hadoop_historyserver
+	#docker volume rm docker-hadoop_hadoop_namenode
 
 wordcount:
 	docker build -t bde2020/hadoop-submit:$(current_branch) $(base_version) ./submit
