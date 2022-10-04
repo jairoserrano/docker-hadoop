@@ -12,11 +12,18 @@ See repository branches for supported hadoop versions
 
 ## Quick Start
 
-To deploy an example HDFS cluster, run:
+To deploy an example HDFS cluster for first time, run:
 ```
   make
   docker-compose up
 ```
+
+To clean volumes, run:
+```
+  make clean
+  docker-compose up
+```
+
 To run hdfs command, run:
 ```
   docker run --network docker-hadoop_default --env-file hadoop.env bde2020/hadoop-base:master hdfs dfs -ls /
